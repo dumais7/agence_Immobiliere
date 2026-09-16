@@ -1,0 +1,23 @@
+import { useState } from "react";
+import Accueil from "./components/Accueil";
+import './App.css';
+
+function App() {
+  const [message, setMessage] = useState(
+    "Nous accompagnons nos clients dans leurs projets immobiliers."
+  );
+
+  const changerMessage = () => {
+    setMessage("Découvrez bientôt nos projets immobiliers.");
+  };
+
+  return (
+    <Accueil
+      titre="Agence Horizon"
+      message={message}
+      onChanger={() => changerMessage}
+    />
+  );
+}
+
+export default App;
