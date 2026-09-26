@@ -2,7 +2,22 @@ import { useState } from "react";
 
 import NavBar from './components/NavBar';
 import Accueil from "./ecrans/Accueil";
+import Projets from './ecrans/Projets';
 import styles from './App.module.css';
+
+import projet01 from './assets/projet-01.jpg';
+import projet02 from './assets/projet-02.jpg';
+import projet03 from './assets/projet-03.jpg';
+import projet04 from './assets/projet-04.jpg';
+import projet05 from './assets/projet-05.jpg';
+import projet06 from './assets/projet-06.jpg';
+import projet07 from './assets/projet-07.jpg';
+import projet08 from './assets/projet-08.jpg';
+import projet09 from './assets/projet-09.jpg';
+import projet10 from './assets/projet-10.jpg';
+import projet11 from './assets/projet-11.jpg';
+import projet12 from './assets/projet-12.jpg';
+
 
 const projetsImmo =[
     {
@@ -14,7 +29,7 @@ const projetsImmo =[
         description : 'Immeuble de 48 condos près du métro, avec terrasse commune sur le toit.',
         prix: '389 000$',
         superficie : '85 m²',
-        image: '/assets/projet-01.jpg',
+        image: projet01
     },
   {
     id: 2,
@@ -25,7 +40,7 @@ const projetsImmo =[
     description: 'Rénovation de plex anciens en logements modernes et écoénergétiques.',
     prix: '625 000 $',
     superficie: '110 m²',
-    image: '/assets/projet-02.jpg',
+    image: projet02,
   },
   {
     id: 3,
@@ -36,7 +51,7 @@ const projetsImmo =[
     description: 'Quartier de 30 maisons unifamiliales entourées d’espaces verts.',
     prix: '475 000 $',
     superficie: '160 m²',
-    image: '/assets/projet-03.jpg',
+    image: projet03,
   },
   {
     id: 4,
@@ -47,7 +62,7 @@ const projetsImmo =[
     description: 'Maisons de ville avec vue sur le fleuve, à deux pas du centre-ville.',
     prix: '349 000 $',
     superficie: '130 m²',
-    image: '/assets/projet-04.jpg',
+    image: projet04
   },
   {
     id: 5,
@@ -58,7 +73,7 @@ const projetsImmo =[
     description: 'Complexe de bureaux de quatre étages avec commerces au rez-de-chaussée.',
     prix: '8 200 000 $',
     superficie: '5 400 m²',
-    image: '/assets/projet-05.jpg',
+    image: projet05
   },
   {
     id: 6,
@@ -69,7 +84,7 @@ const projetsImmo =[
     description: 'Centre commercial de quartier comprenant une épicerie et douze locaux.',
     prix: '4 750 000 $',
     superficie: '3 200 m²',
-    image: '/assets/projet-06.jpg',
+    image: projet06
   },
   {
     id: 7,
@@ -80,7 +95,7 @@ const projetsImmo =[
     description: 'Édifice de bureaux certifié LEED pour entreprises technologiques.',
     prix: '12 500 000 $',
     superficie: '7 800 m²',
-    image: '/assets/projet-07.jpg',
+    image: projet07
   },
   {
     id: 8,
@@ -91,7 +106,7 @@ const projetsImmo =[
     description: 'Bâtiment industriel léger avec quais de chargement et bureaux.',
     prix: '6 300 000 $',
     superficie: '9 500 m²',
-    image: '/assets/projet-08.jpg',
+    image: projet08
   },
   {
     id: 9,
@@ -102,7 +117,7 @@ const projetsImmo =[
     description: 'Grand terrain boisé zoné résidentiel, idéal pour un projet de chalets.',
     prix: '520 000 $',
     superficie: '42 000 m²',
-    image: '/assets/projet-09.jpg',
+    image: projet09
   },
   {
     id: 10,
@@ -113,7 +128,7 @@ const projetsImmo =[
     description: 'Lots desservis en bordure de l’autoroute 20, zonage industriel.',
     prix: '1 150 000 $',
     superficie: '25 000 m²',
-    image: '/assets/projet-10.jpg',
+    image: projet10,
   },
   {
     id: 11,
@@ -124,7 +139,7 @@ const projetsImmo =[
     description: 'Terrain agricole converti en zone résidentielle de faible densité.',
     prix: '295 000 $',
     superficie: '18 000 m²',
-    image: '/assets/projet-11.jpg',
+    image: projet11
   },
   {
     id: 12,
@@ -135,7 +150,7 @@ const projetsImmo =[
     description: 'Terrain riverain prêt à construire pour un projet mixte.',
     prix: '870 000 $',
     superficie: '12 500 m²',
-    image: '/assets/projet-12.jpg',
+    image: projet12
   },
 ];
 
@@ -148,9 +163,6 @@ function App() {
 
   const [projets, setProjets] = useState(projetsImmo)
 
-  const changerMessage = () => {
-    setMessage("Découvrez bientôt nos projets immobiliers.");
-  };
 
   const retirerProjet = (id) => {
     setProjets(projets.filter((projet) => projet.id !== id));
@@ -170,6 +182,13 @@ function App() {
             titre="Agence Horizon"
             message='Nous accompagnons nos clients dans leurs projets immobiliers.'
             setSectionActive={setSectionActive}
+          />
+        )}
+
+        {sectionActive === 'projets' &&(
+          <Projets
+            projets={projets}
+            onRetirerProjet={retirerProjet}
           />
         )}
       </main>
