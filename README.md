@@ -74,6 +74,22 @@ Processus :
 	- Utilisateur consulte le site sur un cellulaire
 	- Le site s'adapte au format de l'écran
 	
+Informations à afficher
+- Pour chaque projet : une image, un titre, une ville ou un secteur, un type, un statut, une courte description et une information financière ou de superficie.
+- Une présentation de l'agence et de ses activités (acquisition de terrains, financement, développement, mise en marché et revente)
+- La liste des services offerts.
+- Les coordonnées de l'agence.
+
+Contraintes de qualité
+- L'interface doit être claire, professionnelle et visuellement cohérente d'une section à l'autre.
+- L'interface doit rester lisible et utilisable sur ordinateur, tablette et téléphone.
+- Les actions possibles (boutons, filtres, liens) doivent être faciles à repérer.
+
+Contraintes techniques
+- L'application est réalisée en React à partir du projet de départ fourni.
+- L'interface utilise React-Bootstrap et des CSS Modules.
+- La navigation se fait par affichage conditionnel, sans React Router.
+- Les projets sont conservés dans un state. Aucun backend ni API.
 	
 
 Arbres des composants
