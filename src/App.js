@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Accueil from "./components/Accueil";
-import './App.css';
+import 
 
 function App() {
   const [message, setMessage] = useState(
@@ -15,7 +15,7 @@ function App() {
     <Accueil
       titre="Agence Horizon"
       message={message}
-      onChanger={() => changerMessage}
+      onChanger={changerMessage}
     />
   );
 }

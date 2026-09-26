@@ -80,7 +80,22 @@ Arbres des composants
 ---------------------
 APP --- NavBar ----- Menu
  |
- | --- Contenu ----- 
+ | --- Contenu ----- MenuFiltre
  |
  | --- Footer ----- InfoAgence
- 
+
+
+ Correction des erreurs
+------------------------
+
+1. Dans App.js, il y a une faute de frappe dans import Accueil from "./components/Acceuil" 
+2. Le fichier CSS pour Accueil n'est pas nommé de la bonne façon. J'ai modifié le nom pour Accueil.module.css. 
+3. Dans Accueil.js, faute de frappe dans l'importation de import "./Acceuil.css". Ça devient import styles from './Accueil.module.css'.
+4. Dans App.js, le prop est titreSite, alors que dans Accueil.js il est nommé titre. J'ai renommé pour titre seulement.
+5. Dans Accueil.js, le onClick était mal écrit. Le C était en minuscule alors qu'il devrait être en majuscule. 
+6. Dans Accueil.js, on déclare className={hero} alors que ça devrait être {styles.heros}. 
+7. Dans Accueil.module.css, on a padding:30 sans préciser l'unité de mesure. J'ai mis 30px.
+8. Le fichier CSS pour App inclut seulement des styles par défaut. J'ai supprimé le fichier App.css pour repartir à neuf.
+9. Dans App.js, le bouton onChanger ne fait rien parce que la méthode ne lui ai pas passée correctement. J'ai corrigé par onChanger={changerMessage} 
+10. Bootstrap n'était pas importé dans index.js. Alors je l'ai importé avec import 'bootstrap/dist/css/bootstrap.min.css'.
+11. J'ai supprimé les fichiers inutiles tels que : App.Test.js, setupTests.js, logo.svg et reportWebVitals.js.
