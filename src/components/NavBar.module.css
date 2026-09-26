@@ -1,0 +1,33 @@
+.navbar{
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(15,42,68,0.08);
+
+}
+.brand{
+    cursor: pointer;
+
+}
+.logo{
+    height: 48px;
+
+}
+.lien,
+.lienActif{
+    margin-left: 8px;
+    padding: 8px 14px !important;
+    border-radius:8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.lien{
+    color:#0f2a44
+}
+.lien:hover{
+    background-color: #eef3f7;
+}
+
+/* Section active en vert */
+.lienActif{
+    color:#ffffff !important;
+    background-color: #1f8f6a;
+}

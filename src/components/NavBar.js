@@ -1,4 +1,4 @@
-import {Navbar, Nav, Container, NavbarBrand, NavbarCollapse} from 'react-bootstrap'
+import {Navbar, Nav, Container, NavbarBrand, NavbarCollapse, NavbarToggle} from 'react-bootstrap'
 
 import logo from '../assets/Logo.png';
 import styles from './NavBar.module.css';
@@ -20,13 +20,13 @@ export default function NavBar({sectionActive, onChangerSection}) {
   return (
     <Navbar expand="lg" sticky='top' className={styles.navbar}>
         <Container>
-            <Navbar.Brand className={styles.brand} onClick={() => onChangerSection('accueil')}>
+            <NavbarBrand className={styles.brand} onClick={() => onChangerSection('accueil')}>
                 <img src={logo} alt='Agence Horizon' className={styles.logo}/>
-            </Navbar.Brand>
+            </NavbarBrand>
 
-            <Navbar.Toggle aria-controls="menu-principal"/>
+            <NavbarToggle aria-controls="menu-principal"/>
 
-            <Navbar.Collapse id='menu-principal'>
+            <NavbarCollapse id='menu-principal'>
                 <Nav className='ms-auto'>
                     {sections.map((section) => (
                         <Nav.Link key={section.id} onClick={() => onChangerSection(section.id)}
@@ -35,7 +35,7 @@ export default function NavBar({sectionActive, onChangerSection}) {
                         </Nav.Link>
                     ))}
                 </Nav>
-            </Navbar.Collapse>
+            </NavbarCollapse>
         </Container>
     </Navbar>
   )
