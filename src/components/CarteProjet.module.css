@@ -1,0 +1,35 @@
+.card{
+    height: 100%;
+    border: 1px solid #e7ecef;
+    border-radius : 18px !important;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(15,42,68,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.image{
+    height: 200px;
+    object-fit: cover;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+}
+
+.badges{
+    display: flex;
+    gap:6px;
+    margin-bottom: 10px;
+}
+
+.titre{
+    margin-bottom:2px;
+    font-weight: 700;
+    color: #0f2a44;
+}
+
+.ville{
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #6b7a89;
+}
