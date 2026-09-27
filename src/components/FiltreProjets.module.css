@@ -1,0 +1,12 @@
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.bouton {
+  min-width: 120px;
+  border-radius: 20px !important;
+}
