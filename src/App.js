@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Accueil from "./ecrans/Accueil";
 import Projets from './ecrans/Projets';
 import Apropos from './ecrans/Apropos';
+import Contacts from './ecrans/Contacts';
 import sections from './data/Sections';
 import styles from './App.module.css';
 import Footer from './components/Footer';
@@ -197,6 +198,10 @@ function App() {
 
         {sectionActive === 'apropos' &&(
           <Apropos/>
+        )}
+
+        {sectionActive === 'joindre'&&(
+          <Contacts/>
         )}
       </main>
       <Footer onChangerSection={setSectionActive}/>
