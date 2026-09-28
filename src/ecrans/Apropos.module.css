@@ -1,0 +1,10 @@
+.section{
+    padding:50px 0;
+}
+
+.logo{
+    width:100%; 
+    max-width: 320px;
+    border-radius: 18px;
+}
+

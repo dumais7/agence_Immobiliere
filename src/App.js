@@ -3,6 +3,8 @@ import { useState } from "react";
 import NavBar from './components/NavBar';
 import Accueil from "./ecrans/Accueil";
 import Projets from './ecrans/Projets';
+import Apropos from './ecrans/Apropos';
+import sections from './data/Sections';
 import styles from './App.module.css';
 import Footer from './components/Footer';
 
@@ -193,6 +195,9 @@ function App() {
           />
         )}
 
+        {sectionActive === 'apropos' &&(
+          <Apropos/>
+        )}
       </main>
       <Footer onChangerSection={setSectionActive}/>
     </div>
