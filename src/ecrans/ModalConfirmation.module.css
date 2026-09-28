@@ -1,0 +1,25 @@
+.arrierePlan{
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.fenetre{
+    background: white;
+    border-radius: 18px;
+    padding:28px;
+    box-shadow: 0 25px 60px rgba(15,23,42,0.25);
+    width: min(440px, 100%)
+}
+
+.actions{
+    display: flex;
+    justify-content: flex-end;
+    gap:12px;
+    margin-top: 24px;
+}

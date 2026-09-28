@@ -2,6 +2,7 @@ import React, { use } from 'react'
 import {useState} from 'react';
 import {Card, Badge, Button} from 'react-bootstrap';
 import styles from './CarteProjet.module.css';
+import ModalConfirmation from '../ecrans/ModalConfirmation'
 
 // Gere la couleur selon le statut de la propriete
 const couleursStatut = {
@@ -17,7 +18,7 @@ const confirmerRetrait = () => {
     onRetirer(projet.id);
     setAfficherModal(false);
 }
-
+console.log(projet.titre, '→', projet.statut, '→', couleursStatut[projet.statut]);
   return (
     <>
     <Card className={styles.card}>
@@ -31,7 +32,7 @@ const confirmerRetrait = () => {
         <Card.Body className={styles.body} >
             <div className={styles.badges} >
                 <Badge bg='dark'>{projet.type}</Badge>
-                <Badge bg={couleursStatut[projet.statut]}></Badge>
+                <Badge bg={couleursStatut[projet.statut]}>{projet.statut}</Badge>
             </div>
 
             <Card.Title className={styles.titre}>{projet.titre}</Card.Title>
