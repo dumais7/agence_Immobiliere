@@ -1,0 +1,15 @@
+.footer{
+    margin-top: 40px;
+    padding : 40px 0 20px;
+    color: #cfd8e3;
+    background-color: #0f2a44;
+}
+
+.nom{
+    font-weight: 700px;
+    color: #ffffff;
+}
+
+.titreLiens{
+    color: #ffffff;
+}
