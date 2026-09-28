@@ -2,18 +2,9 @@ import {Navbar, Nav, Container, NavbarBrand, NavbarCollapse, NavbarToggle} from 
 
 import logo from '../assets/Logo.png';
 import styles from './NavBar.module.css';
+import sections from '../data/Sections';
 
 import React from 'react'
-
-// Tous les boutons du Navbar. Seront géré par un map.()
-const sections = [
-    {id: 'accueil', name:'Accueil'},
-    {id: 'projets', name:'Projets'},
-    {id: 'services', name:'Services'},
-    {id: 'apropos', name:'À Propos'},
-    {id: 'joindre', name:'Nous Joindre'},
-
-]
 
 // Navbar.Toggle -> menu se replit sous un bouton sur petit ecran
 export default function NavBar({sectionActive, onChangerSection}) {
