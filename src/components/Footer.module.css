@@ -13,3 +13,28 @@
 .titreLiens{
     color: #ffffff;
 }
+
+.liens{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+}
+.lien{
+    padding:0;
+    color:#cfd8e3;
+    background: none;
+    border: none;
+}
+
+.lien:hover{
+    color:#ffffff;
+    text-decoration: underline;
+}
+
+.bas{
+    margin-top: 30px;
+    padding-top: 16px;
+    font-size: 0.85rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.15)
+}

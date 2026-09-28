@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Accueil from "./ecrans/Accueil";
 import Projets from './ecrans/Projets';
 import styles from './App.module.css';
+import Footer from './components/Footer';
 
 import projet01 from './assets/projet-01.jpg';
 import projet02 from './assets/projet-02.jpg';
@@ -191,8 +192,9 @@ function App() {
             onRetirerProjet={retirerProjet}
           />
         )}
+
       </main>
-      
+      <Footer onChangerSection={setSectionActive}/>
     </div>
   );
 }
