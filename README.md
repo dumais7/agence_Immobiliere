@@ -1,5 +1,5 @@
-Analyse des besoins
--------------------
+Analyse des besoins fonctionnels
+---------------------------------
 
 Le site doit permettre à l'utilisateur de consulter l'ensemble des activités de l'agence immobilière.
 Le site doit permettre à l'utilisateur de consulter les propriétés en vente.
@@ -20,43 +20,43 @@ Cas d'utilisation
 Consulter l'ensemble des activités de l'agence
 Acteur : Utilisateur
 Processus :
-	- L'utilisateur arrive sur le site
+	- L'utilisateur arrive sur la page d'accueil
 	- Utilisateur a le choix entre plusieurs sections pour découvrir le site
 	- Utilisateur clique sur un bouton du menu
 	
-Navigation
+Navigation entre les sections 
 Acteur : Utilisateur
 Processus :
-	- Utilisateur clique sur un bouton dans le menu
+	- Utilisateur clique sur un bouton dans le menu ou le pied de page
 	- Selon le bouton cliqué, il ira sur la page correspondante
-	- Bouton accueil -> page accueil
+	- Bouton accueil -> page accueil, présentation de l'agence
 	- Bouton projets -> accès à tous les projets de l'agence
 	- Bouton services -> informations sur les services de l'agence
 	- Bouton À propos -> Informations sur l'agence
-	- Bouton nous joindre -> Informations de contact
+	- Bouton nous joindre -> Informations de contact de l'agence
 
-Detail d'une propriété
+Consulter un projet
 Acteur : Utilisateur
-Processus : 
-	- Utilisateur clique sur une propriété
-	- Le clic montre les informations complètes d'une propriété (titre, ville, type, statut, 
-	  description, info financière/superficie, image)
+Processus L
+	- Utilisateur accès à la section Projets
+	- Chaque projet est présenté dans un encadré qui affiche ses informations
 	  
 Appliquer un filtre de recherche
 Acteur : Utilisateur
 Processus : 
 	- Utilisateur sélectionne un filtre dans le menu de filtre
-	- La liste des projets se modifie en fonction du filtre sélectionné
+	- La liste des projets se modifie en fonction du filtre choisi
 	- Si aucune propriété ne correspond au filtre -> affiche un avertissement	
 	
 Retirer un projet de la liste
 Acteur : Utilisateur
 Processus : 
 	- Utilisateur décide de supprimer une propriété
-	- Clique sur le bouton supprimer
-	- La propriété disparaît de la liste
+	- Clique sur le bouton 'Retirer'
+	- S'il confirme, la propriété disparaît de la liste
+	- S'il annule, il retourne à la page Projets.
 	
-Savoir dans quelle section du site nous sommes
+Savoir dans quelle section du site nous sommes sur le site
 Acteur : Utilisateur
 Processus :
 	- Utilisateur clique sur un bouton du menu
@@ -75,30 +75,61 @@ Processus :
 	- Le site s'adapte au format de l'écran
 	
 Informations à afficher
+-----------------------
 - Pour chaque projet : une image, un titre, une ville ou un secteur, un type, un statut, une courte description et une information financière ou de superficie.
 - Une présentation de l'agence et de ses activités (acquisition de terrains, financement, développement, mise en marché et revente)
 - La liste des services offerts.
 - Les coordonnées de l'agence.
 
 Contraintes de qualité
-- L'interface doit être claire, professionnelle et visuellement cohérente d'une section à l'autre.
-- L'interface doit rester lisible et utilisable sur ordinateur, tablette et téléphone.
-- Les actions possibles (boutons, filtres, liens) doivent être faciles à repérer.
+---------------------
+- L'interface doit être claire, professionnelle et visuellement cohérente d'une section à l'autre
+- L'interface doit rester lisible et utilisable sur ordinateur, tablette et téléphone
+- Les actions possibles (boutons, filtres, liens) doivent être faciles à identifier
 
 Contraintes techniques
-- L'application est réalisée en React à partir du projet de départ fourni.
-- L'interface utilise React-Bootstrap et des CSS Modules.
-- La navigation se fait par affichage conditionnel, sans React Router.
-- Les projets sont conservés dans un state. Aucun backend ni API.
+-----------------------
+- L'application est réalisée en React à partir du projet de départ fourni
+- L'interface utilise React-Bootstrap et des CSS Modules
+- La navigation se fait par affichage conditionnel, sans React Router
+- Les projets sont conservés dans un state. Aucun backend ni API
 	
 
-Arbres des composants
+Arbre des composants
 ---------------------
-APP --- NavBar ----- Menu
- |
- | --- Contenu ----- MenuFiltre
- |
- | --- Footer ----- InfoAgence
+
+App                                  state : sectionActive, projets
+│                                    fonction : retirerProjet
+│
+├── NavBar                           props : sectionActive, onChangerSection
+│
+├── <main> — affichage conditionnel selon sectionActive 
+│   │
+│   ├── Accueil                      props : titre, message, onChangerSection
+│   │
+│   ├── Projets                      props : projets, onRetirerProjet
+│   │   │                            state : filtreActif
+│   │   ├── Entete                   props : soustitre, titre, children
+│   │   ├── FiltreProjets            props : filtres, filtreActif, onChangerFiltre
+│   │   ├── CarteProjet 		     props : projet, onRetirer
+│   │   │   │                        state : afficherModal
+│   │   │   └── ModalConfirmation    props : titre, children, onFermer, onConfirmer, texteConfirmer
+│   │   └── Alert 
+│   │
+│   ├── Services
+│   │   └── Entete
+│   │
+│   ├── Apropos
+│   │   └── Entete
+│   │
+│   └── Contacts
+│       └── Entete
+│
+└── Footer                           props : onChangerSection
+
+Données
+├── data/projetsImmo.js   -> valeur initiale du state projets (12 projets)
+└── data/Sections.js      -> liste des sections, partagée par NavBar et Footer
 
 
  Correction des erreurs
