@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import sections from '../data/Sections';
 import styles from './Footer.module.css';
 
+// Footer a seulement besoin de onChangerSection pour les liens
 export default function Footer({ onChangerSection }) {
     return (
         <footer className={styles.footer}>
@@ -20,7 +21,7 @@ export default function Footer({ onChangerSection }) {
                                     key={section.id}
                                     type="button"
                                     className={styles.lien}
-                                    onClick={() => onChangerSection(section.id)}
+                                    onClick={() => onChangerSection(section.id)} // id : 'accueil', 'projets', etc. Sections.js
                                 >
                                     {section.name}
                                 </button>
@@ -30,7 +31,7 @@ export default function Footer({ onChangerSection }) {
                 </Row>
 
                 <div className={styles.bas}>
-                    2026 Agence Horizon - All rights reserved
+                    2026 Agence Horizon - Tous droits réservés
                 </div>
             </Container>
         </footer>

@@ -6,7 +6,9 @@ import sections from '../data/Sections';
 
 import React from 'react'
 
-// Navbar.Toggle -> menu se replit sous un bouton sur petit ecran
+// Navbar.Toggle -> menu se replit sous un bouton sur petit écran
+// NavBar a besoin de la sectionActive 'accueil', 'projets', etc.
+// et onChangerSection pour le useState dans App.js
 export default function NavBar({sectionActive, onChangerSection}) {
   return (
     <Navbar expand="lg" sticky='top' className={styles.navbar}>

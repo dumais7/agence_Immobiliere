@@ -4,6 +4,7 @@ import Entete from '../components/Entete';
 import styles from './Apropos.module.css';
 import logoAgence from '../assets/Agence.png';
 
+// prends pas de props, pas besoin
 export default function Apropos() {
   return (
     <section className={styles.section}>

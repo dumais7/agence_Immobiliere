@@ -1,7 +1,8 @@
 import { Container, Button } from "react-bootstrap";
 import styles from './Accueil.module.css';
 
-function Accueil({ titre, message, setSectionActive }) {
+// titre de l'accueil, message, setSectionActive pour le useState() dans App.js
+function Accueil({ titre, message, onChangerSection }) {
   return (
     <Container className={styles.accueil}>
       <section className={styles.heros}>
@@ -12,11 +13,11 @@ function Accueil({ titre, message, setSectionActive }) {
         </p>
 
         <div className={styles.buttons}>
-          <Button variant="dark" onClick={()=> setSectionActive('projets')}>
+          <Button variant="dark" onClick={()=> onChangerSection('projets')}>
             Voir les projets
           </Button>
 
-          <Button variant="outline-dark" onClick={() => setSectionActive('services')}>
+          <Button variant="outline-dark" onClick={() => onChangerSection('services')}>
             Nos services
           </Button>
         </div>

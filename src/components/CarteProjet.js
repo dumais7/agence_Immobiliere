@@ -1,24 +1,28 @@
-import React, { use } from 'react'
 import {useState} from 'react';
 import {Card, Badge, Button} from 'react-bootstrap';
 import styles from './CarteProjet.module.css';
 import ModalConfirmation from '../ecrans/ModalConfirmation'
 
-// Gere la couleur selon le statut de la propriete
+// Gère la couleur selon le statut de la propriété
 const couleursStatut = {
     'En vente':'success',
     'En développement': 'warning',
     'Vendu': 'secondary'
 }
+
+// CarteProjet a besoin du projet et onRetirer pour gérer le retrait
 export default function CarteProjet({projet, onRetirer}) {
 
+// gestion de l'affichage du modal de suppression
 const [afficherModal, setAfficherModal] = useState(false);
 
+// quand on confirme un retrait, on passe id a onRetirer
+// et on ferme le modal
 const confirmerRetrait = () => {
     onRetirer(projet.id);
     setAfficherModal(false);
 }
-console.log(projet.titre, '→', projet.statut, '→', couleursStatut[projet.statut]);
+
   return (
     <>
     <Card className={styles.card}>
@@ -63,7 +67,7 @@ console.log(projet.titre, '→', projet.statut, '→', couleursStatut[projet.sta
         onFermer={() => setAfficherModal(false)}
         onConfirmer={confirmerRetrait}
         >
-        <p>Voulez-vous vraiment retirer <strong>{projet.titre}</strong> de la liste ?</p>    
+            <p>Voulez-vous vraiment retirer <strong>{projet.titre}</strong> de la liste ?</p>    
         </ModalConfirmation>
     )}
     </>

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 
 import styles from './FiltreProjets.module.css';
 
-
+// FiltreProjets a besoin des filtres, du filtre actif et de la fonction qui change le filtre actif
 export default function FiltreProjets({ filtres, filtreActif, onChangerFiltre }) {
   return (
     <div className={styles.filtres}>
@@ -12,7 +12,7 @@ export default function FiltreProjets({ filtres, filtreActif, onChangerFiltre })
           key={filtre}
           variant={filtre === filtreActif ? 'success' : 'outline-success'}
           className={styles.bouton}
-          onClick={() => onChangerFiltre(filtre)}
+          onClick={() => onChangerFiltre(filtre)} // onChangerFiltre('Tous') ('Residentiel') OU ('Commercial')
         >
           {filtre}
         </Button>

@@ -10,6 +10,7 @@ const services = [
     {id:4, titre: 'Mise en marché et revente', texte:'Nous commercialisons et revendons des propriétés résidentielles et commerciales.'}
 ]
 
+// Ne prend rien en props parce qu'il n'a besoin de rien
 export default function Services() {
   return (
     <section className={styles.section}>

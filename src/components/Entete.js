@@ -1,7 +1,7 @@
 import styles from './Entete.module.css';
 
-// on reutilise toujours la meme entete dans les sections projets, services, apropos, nous joindre
-// evite la repitition
+// on réutilise toujours la même entête dans les sections projets, services, apropos, nous joindre
+// Évite la répétition
 export default function Entete({soustitre, titre, children}) {
   return (
     <div className={styles.entete}>
