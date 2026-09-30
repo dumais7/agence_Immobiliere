@@ -10,7 +10,7 @@ export default function FiltreProjets({ filtres, filtreActif, onChangerFiltre })
       {filtres.map((filtre) => (
         <Button
           key={filtre}
-          variant={filtre === filtreActif ? 'success' : 'outline-success'}
+          variant={filtre === filtreActif ? 'secondary' : 'outline-secondary'}
           className={styles.bouton}
           onClick={() => onChangerFiltre(filtre)} // onChangerFiltre('Tous') ('Residentiel') OU ('Commercial')
         >
